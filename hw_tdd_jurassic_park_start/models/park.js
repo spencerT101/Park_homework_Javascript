@@ -53,13 +53,10 @@ const Park = function (name, price) {
 
   Park.prototype.calculateRevenuePerYear  = function(){
     
-    let visitors = 0;
-
-    for (const dinosaur of this.dinosaur_collection){
-        visitors += dinosaur.guestsAttractedPerDay 
-
-    }
-    return visitors * 365 * this.price
+    guestsPerYear = this.calculateNumOfVistorsPerYear
+    revenuePerYear = guestsPerYear * this.price
+    return revenuePerYear
+    
     
 }
 
