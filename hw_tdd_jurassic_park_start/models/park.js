@@ -20,6 +20,15 @@ const Park = function (name, price) {
   Park.prototype.dinosaurWithMostVisitors = function(){
       return this.dinosaur_collection.guestsAttractedPerDay.max();
   }
+  Park.prototype.dinosaurSpecies = function(species){
+      let dinosaur_list = [];
+      for (dinosaur of this.dinosaur_collection){
+          if (dinosaur.species === species){
+              dinosaur_list.push(dinosaur)
+          }
+      }
+      return dinosaur_list
+  }
 
   Park.prototype.calculateNumOfVistorsPerDay = function(){
       let total = 0;
@@ -38,7 +47,21 @@ const Park = function (name, price) {
         total += dinosaur.guestsAttractedPerDay * 365
 
     }
+    
     return total
   }
+
+  Park.prototype.calculateRevenuePerYear  = function(){
+    
+    let visitors = 0;
+
+    for (const dinosaur of this.dinosaur_collection){
+        visitors += dinosaur.guestsAttractedPerDay 
+
+    }
+    return visitors * 365 * this.price
+    
+}
+
 
   module.exports = Park;
