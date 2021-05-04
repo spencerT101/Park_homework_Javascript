@@ -20,8 +20,12 @@ describe('Park', function() {
     assert.strictEqual(actual, '£50')
   });
   
+  describe('dinosaur_collection', function(){
 
-  it('should have a collection of dinosaurs');
+    it('should have a collection of dinosaurs', function (){
+      const actual = park_1.dinosaur_collection
+      assert.deepStrictEqual(actual, [])
+  });
 
   it('should be able to add a dinosaur to its collection');
 
@@ -37,4 +41,5 @@ describe('Park', function() {
 
   it('should be able to calculate total revenue for one year');
 
+  })
 });
