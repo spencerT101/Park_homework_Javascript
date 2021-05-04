@@ -30,5 +30,15 @@ const Park = function (name, price) {
       return total
 
   }
+  Park.prototype.calculateNumOfVistorsPerYear  = function(){
+
+    let total = 0
+
+    for (const dinosaur of this.dinosaur_collection){
+        total += dinosaur.guestsAttractedPerDay * 365
+
+    }
+    return total
+  }
 
   module.exports = Park;
