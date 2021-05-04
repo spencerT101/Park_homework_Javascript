@@ -1,15 +1,19 @@
 const assert = require('assert');
 const Park = require('../models/park.js');
 const Dinosaur = require('../models/dinosaur.js');
+const { lstat } = require('fs');
 
 describe('Park', function() {
-  let = park
-  beforeEach(function () {
-    park_1 = new Park('Jurassic Park','£50' )
+  let park;
 
+  beforeEach(function () {
+    park_1 = new Park('Jurassic Park','£50') 
   })
 
-  it('should have a name', function);
+  it('should have a name', function(){
+    const actual = park_1.name
+    assert.strictEqual(actual, 'Jurassic Park')
+  });
 
   it('should have a ticket price');
 
