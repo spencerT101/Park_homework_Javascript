@@ -37,21 +37,21 @@ describe('Park', function() {
     it('should be able to add a dinosaur to its collection', function(){
       park_1.addDinosaur(dinosaur_1);
       const actual = park_1.numberOfDinosaurs();
-      assert.strictEqual(actual, 1);
+      assert.deepStrictEqual(actual, 1);
     });
 
     it('should be able to remove a dinosaur from its collection', function (){
       park_1.addDinosaur(dinosaur_1);
       park_1.removeDinosaur(dinosaur_1);
       const actual = park_1.numberOfDinosaurs();
-      assert.strictEqual(actual, 0);
+      assert.deepStrictEqual(actual, 0);
     });
 
-    xit('should be able to find the dinosaur that attracts the most visitors', function(){
+    it('should be able to find the dinosaur that attracts the most visitors', function(){
       park_1.addDinosaur(dinosaur_1);
       park_1.addDinosaur(dinosaur_2);
       const actual = park_1.dinosaurWithMostVisitors();
-      assert.strictEqual(actual, 't-rex');
+      assert.deepStrictEqual(actual, dinosaur_1);
     });
 
     it('should be able to find all dinosaurs of a particular species', function(){
@@ -65,7 +65,7 @@ describe('Park', function() {
       park_1.addDinosaur(dinosaur_1);
       park_1.addDinosaur(dinosaur_2);
       const actual = park_1.calculateNumOfVistorsPerDay();
-      assert.strictEqual(actual, 90)
+      assert.deepStrictEqual(actual, 90)
     });
 
 
@@ -73,14 +73,15 @@ describe('Park', function() {
       park_1.addDinosaur(dinosaur_1);
       park_1.addDinosaur(dinosaur_2);
       const actual = park_1.calculateNumOfVistorsPerYear();
-      assert.strictEqual(actual, 32850)
+      assert.deepStrictEqual(actual, 32850)
     });
 
-    xit('should be able to calculate total revenue for one year', function (){
+    it('should be able to calculate total revenue for one year', function (){
       park_1.addDinosaur(dinosaur_1);
       park_1.addDinosaur(dinosaur_2);
       const actual = park_1.calculateRevenuePerYear();
-      assert.strictEqual(actual, 1642500)
+      const expected = 1642500
+      assert.deepStrictEqual(actual, expected)
     });
 
 
